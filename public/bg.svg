@@ -1,0 +1,229 @@
+<svg viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="primaryBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f23;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#16213e;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#0f3460;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#533483;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="glowOrb1" cx="30%" cy="20%" r="40%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.4" />
+      <stop offset="50%" style="stop-color:#764ba2;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#667eea;stop-opacity:0" />
+    </radialGradient>
+    
+    <radialGradient id="glowOrb2" cx="70%" cy="80%" r="35%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#f5576c;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#f093fb;stop-opacity:0" />
+    </radialGradient>
+    
+    <radialGradient id="glowOrb3" cx="90%" cy="40%" r="25%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:0.35" />
+      <stop offset="50%" style="stop-color:#00f2fe;stop-opacity:0.18" />
+      <stop offset="100%" style="stop-color:#4facfe;stop-opacity:0" />
+    </radialGradient>
+    
+    <linearGradient id="gridGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.03" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.01" />
+    </linearGradient>
+    
+    <linearGradient id="securityGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:0.3" />
+    </linearGradient>
+    
+    <!-- Filters -->
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+    </filter>
+    
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Patterns -->
+    <pattern id="circuitPattern" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+      <rect width="200" height="200" fill="none"/>
+      <circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/>
+      <circle cx="150" cy="50" r="2" fill="rgba(255,255,255,0.08)"/>
+      <circle cx="50" cy="150" r="2" fill="rgba(255,255,255,0.12)"/>
+      <circle cx="150" cy="150" r="2" fill="rgba(255,255,255,0.09)"/>
+      <line x1="50" y1="50" x2="150" y2="50" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="50" y1="50" x2="50" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="150" y1="50" x2="150" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+      <line x1="50" y1="150" x2="150" y2="150" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    </pattern>
+    
+    <pattern id="hexPattern" x="0" y="0" width="60" height="52" patternUnits="userSpaceOnUse">
+      <polygon points="30,2 50,15 50,37 30,50 10,37 10,15" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Main Background -->
+  <rect width="1920" height="1080" fill="url(#primaryBg)"/>
+  
+  <!-- Glowing Orbs -->
+  <ellipse cx="576" cy="216" rx="400" ry="300" fill="url(#glowOrb1)" opacity="0.8">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 50,30; 0,0" dur="20s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <ellipse cx="1344" cy="864" rx="350" ry="280" fill="url(#glowOrb2)" opacity="0.7">
+    <animateTransform attributeName="transform" type="translate" values="0,0; -40,20; 0,0" dur="25s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <ellipse cx="1728" cy="432" rx="250" ry="200" fill="url(#glowOrb3)" opacity="0.6">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 30,-40; 0,0" dur="18s" repeatCount="indefinite"/>
+  </ellipse>
+  
+  <!-- Subtle Grid Pattern -->
+  <rect width="1920" height="1080" fill="url(#hexPattern)" opacity="0.3"/>
+  
+  <!-- Circuit Board Pattern -->
+  <rect width="1920" height="1080" fill="url(#circuitPattern)" opacity="0.4"/>
+  
+  <!-- Floating Security Elements -->
+  <g opacity="0.6">
+    <!-- Lock Icons -->
+    <g transform="translate(200, 300)">
+      <rect x="-8" y="-6" width="16" height="12" rx="2" fill="none" stroke="rgba(0,255,136,0.4)" stroke-width="1.5"/>
+      <circle cx="0" cy="-6" r="5" fill="none" stroke="rgba(0,255,136,0.4)" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="2" fill="rgba(0,255,136,0.3)"/>
+      <animateTransform attributeName="transform" type="translate" values="200,300; 220,280; 200,300" dur="8s" repeatCount="indefinite"/>
+    </g>
+    
+    <g transform="translate(1600, 200)">
+      <rect x="-8" y="-6" width="16" height="12" rx="2" fill="none" stroke="rgba(102,126,234,0.4)" stroke-width="1.5"/>
+      <circle cx="0" cy="-6" r="5" fill="none" stroke="rgba(102,126,234,0.4)" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="2" fill="rgba(102,126,234,0.3)"/>
+      <animateTransform attributeName="transform" type="translate" values="1600,200; 1580,220; 1600,200" dur="10s" repeatCount="indefinite"/>
+    </g>
+    
+    <g transform="translate(1500, 800)">
+      <rect x="-8" y="-6" width="16" height="12" rx="2" fill="none" stroke="rgba(245,87,108,0.4)" stroke-width="1.5"/>
+      <circle cx="0" cy="-6" r="5" fill="none" stroke="rgba(245,87,108,0.4)" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="2" fill="rgba(245,87,108,0.3)"/>
+      <animateTransform attributeName="transform" type="translate" values="1500,800; 1520,820; 1500,800" dur="12s" repeatCount="indefinite"/>
+    </g>
+  </g>
+  
+  <!-- Data Flow Lines -->
+  <g opacity="0.4">
+    <path d="M100,540 Q400,200 800,400 T1600,300" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2" stroke-dasharray="10,10">
+      <animate attributeName="stroke-dashoffset" values="0;20" dur="4s" repeatCount="indefinite"/>
+    </path>
+    
+    <path d="M300,800 Q600,600 1000,750 T1700,650" fill="none" stroke="rgba(0,255,136,0.2)" stroke-width="1.5" stroke-dasharray="8,8">
+      <animate attributeName="stroke-dashoffset" values="0;16" dur="6s" repeatCount="indefinite"/>
+    </path>
+    
+    <path d="M50,200 Q350,400 700,100 T1400,500" fill="none" stroke="rgba(102,126,234,0.15)" stroke-width="2" stroke-dasharray="12,8">
+      <animate attributeName="stroke-dashoffset" values="0;20" dur="8s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Floating Particles -->
+  <g opacity="0.5">
+    <circle cx="300" cy="200" r="3" fill="rgba(255,255,255,0.3)">
+      <animate attributeName="cy" values="200;100;200" dur="6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="800" cy="400" r="2" fill="rgba(0,255,136,0.4)">
+      <animate attributeName="cy" values="400;300;400" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.9;0.4" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="1400" cy="600" r="4" fill="rgba(102,126,234,0.3)">
+      <animate attributeName="cy" values="600;500;600" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="1600" cy="300" r="2" fill="rgba(245,87,108,0.4)">
+      <animate attributeName="cy" values="300;200;300" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="9s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="500" cy="700" r="3" fill="rgba(255,255,255,0.2)">
+      <animate attributeName="cy" values="700;600;700" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.2;0.6;0.2" dur="5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Neural Network Nodes -->
+  <g opacity="0.3">
+    <!-- Network connections -->
+    <line x1="400" y1="150" x2="600" y2="250" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <line x1="600" y1="250" x2="450" y2="350" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <line x1="450" y1="350" x2="650" y2="400" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    
+    <line x1="1200" y1="200" x2="1400" y2="150" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <line x1="1400" y1="150" x2="1350" y2="300" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <line x1="1350" y1="300" x2="1500" y2="250" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    
+    <!-- Network nodes -->
+    <circle cx="400" cy="150" r="4" fill="rgba(102,126,234,0.4)" filter="url(#glow)"/>
+    <circle cx="600" cy="250" r="4" fill="rgba(0,255,136,0.4)" filter="url(#glow)"/>
+    <circle cx="450" cy="350" r="4" fill="rgba(245,87,108,0.4)" filter="url(#glow)"/>
+    <circle cx="650" cy="400" r="4" fill="rgba(255,255,255,0.4)" filter="url(#glow)"/>
+    
+    <circle cx="1200" cy="200" r="4" fill="rgba(102,126,234,0.4)" filter="url(#glow)"/>
+    <circle cx="1400" cy="150" r="4" fill="rgba(0,255,136,0.4)" filter="url(#glow)"/>
+    <circle cx="1350" cy="300" r="4" fill="rgba(245,87,108,0.4)" filter="url(#glow)"/>
+    <circle cx="1500" cy="250" r="4" fill="rgba(255,255,255,0.4)" filter="url(#glow)"/>
+  </g>
+  
+  <!-- Geometric Shapes -->
+  <g opacity="0.2">
+    <polygon points="150,900 200,850 250,900 200,950" fill="none" stroke="rgba(0,255,136,0.3)" stroke-width="1">
+      <animateTransform attributeName="transform" type="rotate" values="0 200 900;360 200 900" dur="20s" repeatCount="indefinite"/>
+    </polygon>
+    
+    <polygon points="1700,150 1750,100 1800,150 1750,200" fill="none" stroke="rgba(102,126,234,0.3)" stroke-width="1">
+      <animateTransform attributeName="transform" type="rotate" values="0 1750 150;-360 1750 150" dur="25s" repeatCount="indefinite"/>
+    </polygon>
+    
+    <rect x="80" y="80" width="40" height="40" fill="none" stroke="rgba(245,87,108,0.3)" stroke-width="1" transform="rotate(45 100 100)">
+      <animateTransform attributeName="transform" type="rotate" values="45 100 100;405 100 100" dur="15s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Subtle Overlay for Text Readability -->
+  <rect x="600" y="200" width="720" height="680" fill="rgba(0,0,0,0.1)" rx="20" opacity="0.3"/>
+  
+  <!-- Security Shield (Subtle) -->
+  <g transform="translate(1800, 100)" opacity="0.15">
+    <path d="M0,-20 L15,-10 L15,10 L0,25 L-15,10 L-15,-10 Z" fill="url(#securityGradient)" filter="url(#glow)"/>
+    <circle cx="0" cy="2" r="3" fill="rgba(255,255,255,0.6)"/>
+    <animateTransform attributeName="transform" type="translate" values="1800,100; 1820,80; 1800,100" dur="10s" repeatCount="indefinite"/>
+  </g>
+  
+  <!-- AI Elements -->
+  <g opacity="0.25">
+    <circle cx="100" cy="500" r="8" fill="none" stroke="rgba(240,147,251,0.4)" stroke-width="2">
+      <animate attributeName="r" values="8;12;8" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <text x="100" y="505" text-anchor="middle" fill="rgba(240,147,251,0.4)" font-family="Arial, sans-serif" font-size="6" font-weight="bold">AI</text>
+    
+    <circle cx="1800" cy="900" r="8" fill="none" stroke="rgba(240,147,251,0.4)" stroke-width="2">
+      <animate attributeName="r" values="8;12;8" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <text x="1800" y="905" text-anchor="middle" fill="rgba(240,147,251,0.4)" font-family="Arial, sans-serif" font-size="6" font-weight="bold">AI</text>
+  </g>
+  
+  <!-- Subtle Grid Lines -->
+  <defs>
+    <pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid)" />
+</svg>

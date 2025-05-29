@@ -1,0 +1,202 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="videoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="glowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
+    </linearGradient>
+    
+    <!-- Filters -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="200" cy="200" r="190" fill="url(#primaryGradient)" filter="url(#shadow)"/>
+  
+  <!-- Outer Ring (Connectivity) -->
+  <circle cx="200" cy="200" r="175" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="10,5">
+    <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 200 200" to="360 200 200" dur="20s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Main Video Screen -->
+  <rect x="100" y="120" width="200" height="140" rx="15" ry="15" fill="url(#videoGradient)" filter="url(#shadow)"/>
+  
+  <!-- Video Screen Highlight -->
+  <rect x="100" y="120" width="200" height="140" rx="15" ry="15" fill="url(#glowGradient)" opacity="0.6"/>
+  
+  <!-- Video Call Participants (3 people) -->
+  <!-- Person 1 -->
+  <rect x="110" y="130" width="55" height="40" rx="8" fill="rgba(255,255,255,0.9)"/>
+  <circle cx="137.5" cy="142" r="8" fill="#667eea"/>
+  <rect x="130" y="152" width="15" height="12" rx="3" fill="#667eea"/>
+  
+  <!-- Person 2 -->
+  <rect x="172.5" y="130" width="55" height="40" rx="8" fill="rgba(255,255,255,0.9)"/>
+  <circle cx="200" cy="142" r="8" fill="#f5576c"/>
+  <rect x="192.5" y="152" width="15" height="12" rx="3" fill="#f5576c"/>
+  
+  <!-- Person 3 -->
+  <rect x="235" y="130" width="55" height="40" rx="8" fill="rgba(255,255,255,0.9)"/>
+  <circle cx="262.5" cy="142" r="8" fill="#00f2fe"/>
+  <rect x="255" y="152" width="15" height="12" rx="3" fill="#00f2fe"/>
+  
+  <!-- AI Agent Indicator -->
+  <circle cx="280" cy="140" r="12" fill="url(#aiGradient)" filter="url(#glow)">
+    <animate attributeName="r" values="12;15;12" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <text x="280" y="145" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">AI</text>
+  
+  <!-- Transcript Lines -->
+  <rect x="110" y="180" width="60" height="3" rx="1.5" fill="rgba(255,255,255,0.8)"/>
+  <rect x="110" y="188" width="45" height="3" rx="1.5" fill="rgba(255,255,255,0.6)"/>
+  <rect x="110" y="196" width="70" height="3" rx="1.5" fill="rgba(255,255,255,0.8)"/>
+  <rect x="110" y="204" width="35" height="3" rx="1.5" fill="rgba(255,255,255,0.6)"/>
+  
+  <!-- Real-time Indicator -->
+  <circle cx="280" cy="190" r="4" fill="#ff4757">
+    <animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite"/>
+  </circle>
+  <text x="270" y="208" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Arial, sans-serif" font-size="8">LIVE</text>
+  
+  <!-- Bottom Control Bar -->
+  <rect x="120" y="270" width="160" height="40" rx="20" fill="rgba(0,0,0,0.3)"/>
+  
+  <!-- Control Buttons -->
+  <!-- Mic Button -->
+  <circle cx="145" cy="290" r="12" fill="rgba(255,255,255,0.9)"/>
+  <rect x="141" y="285" width="3" height="8" rx="1.5" fill="#333"/>
+  <rect x="140" y="294" width="5" height="3" rx="1" fill="#333"/>
+  <line x1="138" y1="297" x2="147" y2="297" stroke="#333" stroke-width="1"/>
+  
+  <!-- Video Button -->
+  <circle cx="175" cy="290" r="12" fill="rgba(255,255,255,0.9)"/>
+  <rect x="170" y="286" width="10" height="7" rx="1" fill="#333"/>
+  <polygon points="178,289 182,286.5 182,293.5" fill="#333"/>
+  
+  <!-- AI Chat Button -->
+  <circle cx="205" cy="290" r="12" fill="url(#aiGradient)"/>
+  <rect x="201" y="287" width="8" height="5" rx="2" fill="white"/>
+  <circle cx="203" cy="289" r="1" fill="url(#aiGradient)"/>
+  <circle cx="205" cy="289" r="1" fill="url(#aiGradient)"/>
+  <circle cx="207" cy="289" r="1" fill="url(#aiGradient)"/>
+  
+  <!-- Screen Share Button -->
+  <circle cx="235" cy="290" r="12" fill="rgba(255,255,255,0.9)"/>
+  <rect x="230" y="286" width="10" height="7" rx="1" fill="#333"/>
+  <rect x="232" y="288" width="6" height="3" fill="white"/>
+  
+  <!-- End Call Button -->
+  <circle cx="265" cy="290" r="12" fill="#ff4757"/>
+  <rect x="260" y="287" width="10" height="4" rx="2" fill="white" transform="rotate(45 265 289)"/>
+  
+  <!-- AI Features Indicators -->
+  <!-- Summary Icon -->
+  <g transform="translate(320, 160)">
+    <circle r="25" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <rect x="-8" y="-8" width="16" height="2" rx="1" fill="white" opacity="0.8"/>
+    <rect x="-8" y="-4" width="12" height="2" rx="1" fill="white" opacity="0.6"/>
+    <rect x="-8" y="0" width="14" height="2" rx="1" fill="white" opacity="0.8"/>
+    <rect x="-8" y="4" width="10" height="2" rx="1" fill="white" opacity="0.6"/>
+    <text x="0" y="18" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Arial, sans-serif" font-size="8">Summary</text>
+  </g>
+  
+  <!-- Search Icon -->
+  <g transform="translate(80, 160)">
+    <circle r="25" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <circle cx="0" cy="-2" r="6" fill="none" stroke="white" stroke-width="2" opacity="0.8"/>
+    <line x1="4" y1="2" x2="8" y2="6" stroke="white" stroke-width="2" opacity="0.8"/>
+    <text x="0" y="18" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Arial, sans-serif" font-size="8">Search</text>
+  </g>
+  
+  <!-- Mobile Responsive Indicator -->
+  <g transform="translate(350, 280)">
+    <rect x="-8" y="-12" width="16" height="24" rx="3" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+    <rect x="-6" y="-8" width="12" height="16" rx="1" fill="rgba(255,255,255,0.1)"/>
+    <circle cx="0" cy="8" r="2" fill="rgba(255,255,255,0.6)"/>
+  </g>
+  
+  <!-- Authentication/Security Icon -->
+  <g transform="translate(50, 280)">
+    <rect x="-6" y="-4" width="12" height="8" rx="1" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+    <circle cx="0" cy="-4" r="3" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+    <circle cx="0" cy="0" r="1.5" fill="rgba(255,255,255,0.6)"/>
+  </g>
+  
+  <!-- Subscription/Premium Badge -->
+  <g transform="translate(320, 80)">
+    <polygon points="0,-10 7,-3 0,4 -7,-3" fill="#ffd700" opacity="0.9"/>
+    <text x="0" y="1" text-anchor="middle" fill="#333" font-family="Arial, sans-serif" font-size="8" font-weight="bold">★</text>
+  </g>
+  
+  <!-- Data Flow Animation -->
+  <g opacity="0.6">
+    <circle cx="200" cy="80" r="2" fill="#00ff88">
+      <animate attributeName="cy" values="80;320;80" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="220" cy="80" r="2" fill="#ff6b6b">
+      <animate attributeName="cy" values="80;320;80" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0;1" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="180" cy="80" r="2" fill="#4ecdc4">
+      <animate attributeName="cy" values="80;320;80" dur="3s" begin="1s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0;1" dur="3s" begin="1s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Central AI Brain -->
+  <g transform="translate(200, 340)">
+    <circle r="20" fill="url(#aiGradient)" filter="url(#glow)" opacity="0.8">
+      <animate attributeName="r" values="18;22;18" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <text x="0" y="5" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">AI</text>
+    
+    <!-- Neural Network Lines -->
+    <g opacity="0.6">
+      <line x1="0" y1="-20" x2="0" y2="-140" stroke="rgba(255,255,255,0.4)" stroke-width="1" stroke-dasharray="3,3">
+        <animate attributeName="stroke-dashoffset" values="0;6" dur="2s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-14" y1="-14" x2="-120" y2="-120" stroke="rgba(255,255,255,0.4)" stroke-width="1" stroke-dasharray="3,3">
+        <animate attributeName="stroke-dashoffset" values="0;6" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+      </line>
+      <line x1="14" y1="-14" x2="120" y2="-120" stroke="rgba(255,255,255,0.4)" stroke-width="1" stroke-dasharray="3,3">
+        <animate attributeName="stroke-dashoffset" values="0;6" dur="2s" begin="1s" repeatCount="indefinite"/>
+      </line>
+    </g>
+  </g>
+  
+  <!-- Git/Version Control Icon -->
+  <g transform="translate(80, 80)">
+    <circle r="15" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <circle cx="-5" cy="-5" r="2" fill="white" opacity="0.8"/>
+    <circle cx="5" cy="-5" r="2" fill="white" opacity="0.8"/>
+    <circle cx="0" cy="5" r="2" fill="white" opacity="0.8"/>
+    <line x1="-5" y1="-3" x2="0" y2="3" stroke="white" stroke-width="1" opacity="0.6"/>
+    <line x1="5" y1="-3" x2="0" y2="3" stroke="white" stroke-width="1" opacity="0.6"/>
+  </g>
+</svg>
