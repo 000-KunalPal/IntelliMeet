@@ -50,6 +50,7 @@ export const SignInView = () => {
                 router.push("/")
             },
             onError: ({ error }) => {
+                setIsGooglePending(false)
                 setError(error.message)
             }
         })
@@ -67,6 +68,7 @@ export const SignInView = () => {
                 setIsGooglePending(false)
             },
             onError: ({ error }) => {
+                setIsGooglePending(false)
                 setError(error.message)
             }
         })

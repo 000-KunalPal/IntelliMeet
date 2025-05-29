@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { authClient } from "@/lib/auth-client"
-import { redirect, useRouter } from "next/navigation"
+import { useRouter } from "next/navigation"
 
 export const HomeView = () => {
     const { data: session, isPending } = authClient.useSession()
@@ -13,7 +13,8 @@ export const HomeView = () => {
     }
 
     if (!session) {
-        return redirect("/");
+        router.push("/");
+        return null;
     }
 
     const handleSignOut = () => {
