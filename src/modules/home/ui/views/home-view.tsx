@@ -1,34 +1,9 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { authClient } from "@/lib/auth-client"
-import { useRouter } from "next/navigation"
-
 export const HomeView = () => {
-    const { data: session, isPending } = authClient.useSession()
-    const router = useRouter()
 
-    if (isPending) {
-        return <p>Loading session...</p>;
-    }
-
-    if (!session) {
-        router.push("/");
-        return null;
-    }
-
-    const handleSignOut = () => {
-        authClient.signOut({
-            fetchOptions: {
-                onSuccess: () => router.push("/sign-in")
-            }
-        })
-    }
 
     return (
-        <div>
-            <h1>Logged in as {session.user.name}</h1>
-            <Button onClick={handleSignOut}>Sign out</Button>
-        </div>
+        <div>home view</div>
     )
 }
