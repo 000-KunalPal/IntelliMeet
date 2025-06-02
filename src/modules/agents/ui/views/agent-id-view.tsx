@@ -53,17 +53,6 @@ export const AgentIdView = ({ agentId }: AgentIdViewProps) => {
         await removeAgent.mutateAsync({ id: agentId })
     }
 
-    const updateAgent = useMutation(
-        trpc.agents.update.mutationOptions({
-            onSuccess: () => {
-                queryClient.invalidateQueries(trpc.agents.getOne.queryOptions({ id: agentId }))
-            },
-            onError: (error) => {
-                toast.error(error.message)
-            }
-        })
-    )
-
     return <>
         <RemoveConfirmationDialog />
         <UpdateAgentDialog
