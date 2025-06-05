@@ -12,7 +12,8 @@
     "db:studio": "drizzle-kit studio",
     "db:migrate": "drizzle-kit migrate",
     "db:pull": "drizzle-kit pull",
-    "db:seed": "bun src/seed.ts"
+    "db:seed": "bun src/seed.ts",
+    "dev:webhook": "ngrok http --url=ready-namely-chamois.ngrok-free.app 3000"
   },
   "dependencies": {
     "@dicebear/collection": "^9.2.2",
@@ -46,6 +47,7 @@
     "@radix-ui/react-toggle-group": "^1.1.10",
     "@radix-ui/react-tooltip": "^1.2.7",
     "@stream-io/node-sdk": "^0.4.24",
+    "@stream-io/openai-realtime-api": "^0.2.0",
     "@stream-io/video-react-sdk": "^1.18.4",
     "@tanstack/react-query": "^5.79.0",
     "@tanstack/react-table": "^8.21.3",
