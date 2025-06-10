@@ -243,6 +243,35 @@ export async function POST(req: Request) {
         ],
         model: "gpt-4o",
       });
+
+      const GPTResponseText = GPTResponse.choices[0].message.content;
+
+      if (!GPTResponseText) {
+        return NextResponse.json(
+          { error: "No response from GPT" },
+          { status: 400 }
+        );
+      }
+
+      const avatarUrl = generateAvatarUri({
+        seed: existingAgent.name,
+        variant: "botttsNeutral",
+      });
+
+      streamChat.upsertUser({
+        id: existingAgent.id,
+        name: existingAgent.name,
+        image: avatarUrl,
+      });
+
+      channel.sendMessage({
+        text: GPTResponseText,
+        user: {
+          id: existingAgent.id,
+          name: existingAgent.name,
+          image: avatarUrl,
+        },
+      });
     }
   }
 
