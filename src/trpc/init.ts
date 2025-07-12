@@ -8,9 +8,7 @@ import {
 } from "@/modules/premium/constants";
 import { initTRPC, TRPCError } from "@trpc/server";
 import { count, eq } from "drizzle-orm";
-import { Palanquin } from "next/font/google";
 import { headers } from "next/headers";
-import { redirect } from "next/navigation";
 import { cache } from "react";
 export const createTRPCContext = cache(async () => {
   /**
